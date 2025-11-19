@@ -3,10 +3,225 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="Style.css" />
+    <title>Chef-Sina</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/Style.css" />
   </head>
   <body>
-    
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="#" class="logo"><i class="bx bxs-bowl-hot bx-tada"></i>Chef-Sina</a>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Pantry</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#" >Contact</a></li>
+        </ul>
+
+        <div class="nav-utilities">
+          <input type="checkbox" id="search-toggle" hidden />
+
+          <div class="search-box">
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <label for="search-toggle" class="search-btn">
+            <i class="bx bx-search"></i>
+          </label>
+
+          <button class="sign-in-btn">Sign In</button>
+          <button class="sign-up-btn">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- enja body site -->
+    <!-- slide -->
+    <div class="slideshow-container">
+      <!-- slide1 -->
+      <div class="mySlides fade"  style="display:block;">
+        <div class="numbertext">1 / 3</div>
+        <img src="pictrue/americano.jpg" >
+        <div class="text">Robusta espresso blended with a large amount of hot water</div>
+      </div>
+      <!-- slide2 -->
+      <!-- icecream -->
+      <div class="mySlides fade"  style="display:block;">
+        <div class="numbertext">2 / 3</div>
+        <img src="pictrue/icecream.jpg" >
+        <div class="text">Delicious and tasty ice creams made with fresh milk</div>
+      </div>
+      <!-- slide3 -->
+      <!-- late cofee -->
+      <div class="mySlides fade"  style="display:block;">
+        <div class="numbertext">3 / 3</div>
+        <img src="pictrue/late.jpg" >
+        <div class="text">Espresso Robusta blended with steamed milk</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+
+    <!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+     <!-- Categories -->
+      <!-- container -->
+      <div class="category-container">
+        <!-- left btn
+        <button class="scroll-btn scroll-left">❮</button> -->
+        <div class="category-scroll" id="categoryScroll">
+          <!-- item1 -->
+           <!-- hot drinks -->
+          <div class="category-item">
+            <div class="category-icon"><i class='bxrds  bx-coffee-cup'></i> </div>
+            <div class="category-label">Hot drinks</div>
+          </div>
+
+
+          <!-- item2 -->
+           <!-- cold deinks -->
+          <div class="category-item">
+            <div class="category-icon"><i class='bxrds  bx-snowflake'></i></div>
+            <div class="category-label">cold drinks</div>
+          </div>
+
+
+          <!-- item 3-->
+           <!-- milk shakes -->
+          <div class="category-item">
+            <div class="category-icon"><i class='bxrds  bx-milk-bottle'></i> </div>
+            <div class="category-label">milk shakes</div>
+          </div>
+
+
+          <!-- item 4-->
+          <!-- icecream -->
+          <div class="category-item">
+            <div class="category-icon"><i class='bxrds  bx-icecream'></i></div>
+            <div class="category-label">icecream</div>
+          </div>
+
+
+             <!-- item 5-->
+             <div class="category-item">
+              <div class="category-icon"><i class='bxrds  bx-dots-horizontal'></i> </div>
+              <div class="category-label">more</div>
+            </div>
+  
+        </div>
+        <!-- <button class="scroll-btn scroll-right" onclick="scrollCategories(150)">❯</button> -->
+      </div>
+
+      <section class="puffery-section">
+        <div class="puffery-container">
+          <div class="puffery-text">
+            <p>
+              Our cafe proudly serves the best-extracted coffee at the lowest price in Rasht
+            </p>
+          </div>
+          <div class="puffery-image">
+            <img src="pictrue/milkeshake.jpg" alt="Milkshake">
+          </div>
+        </div>
+      </section>
+
+
+
+    <main style="min-height: 50vh; padding: 20px; text-align: center"></main>
+      <!-- your footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="col-main">
+          <h3 class="logo-text">Cafe & Eatery</h3>
+          <p style="cursor: default;">
+            A cozy place for your delightful moments! We offer the best quality
+            savory dishes, desserts, and coffee shop beverages.
+          </p>
+          <a  onclick="constraintAlert()" class="read-more">read more →</a>
+        </div>
+
+        <div class="col-categories">
+          <h3>CATEGORIES</h3>
+          <ul>
+            <li><a href="#">Main Dishes</a></li>
+            <li><a href="#">Hot Drinks</a></li>
+            <li><a href="#">Cold Drinks</a></li>
+            <li><a href="#">Desserts & Sweets</a></li>
+            <li><a href="#">Appetizers & Salads</a></li>
+            <li><a href="#">Help & Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-tags">
+          <h3>TAG CLOUD</h3>
+          <div class="tag-cloud">
+            <a href="#">Coffee</a>
+            <a href="#">Espresso</a>
+            <a href="#">Latte</a>
+            <a href="#">Cake</a>
+            <a href="#">Burger</a>
+            <a href="#">Ice Cream</a>
+            <a href="#">Soda</a>
+            <a href="#">Cheesecake</a>
+          </div>
+        </div>
+
+        <div class="col-social-subscribe">
+          <div class="subscribe-section">
+            <h3>SUBSCRIBE</h3>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Enter email address" required />
+              <button type="submit">
+                <i class="bx bxs-send"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="follow-section">
+            <h3>FOLLOW US</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Twitter link"
+                ><i class="bx bxl-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook link"
+                ><i class="bx bxl-facebook-square"></i
+              ></a>
+              <a href="#" aria-label="Instagram link"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+              <a href="https://github.com/SinaAbbasspoor/Chef-Sina" aria-label="GitHub link"
+                ><i class="bx bxl-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          This Project Was Built by Engineer Sina Abbaspour And Parsa Gurbanpour In 2026.
+        </p>
+        <div class="legal-links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Compliances</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/Script.js"></script>
   </body>
 </html>
