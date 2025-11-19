@@ -1,0 +1,745 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: #ffd153;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navbar {
+    background-color: #1e1e1e;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px 4px #7aff96;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #ff5757;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.logo i {
+    color: #ffd153;
+    font-size: 32px;
+    margin-right: 8px;
+}
+
+/* 2. چینش لینک‌های ناوبری (وسط) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    
+    /* تنظیم مارجین‌ها برای قرار دادن در وسط */
+    margin: 0 auto; 
+    position: relative;
+    left: -15px; /* تنظیم دقیق‌تر برای مرکز (با توجه به پدینگ لوگو) */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #ffd153;
+}
+
+/* افکت خط سبز زیر لینک‌ها هنگام هاور */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; 
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #7aff96;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 3. قسمت ابزارها (سمت راست) */
+.nav-utilities {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* استایل‌دهی دکمه‌های ورود/ثبت نام */
+.sign-in-btn, .sign-up-btn {
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.sign-in-btn {
+    background-color: #7aff96;
+    color: #1e1e1e;
+}
+
+.sign-up-btn {
+    background-color: #7aff96;
+    color: #1e1e1e;
+}
+
+.sign-in-btn:hover {
+    background-color: #ff5757;
+    color: #1e1e1e;
+}
+
+.sign-up-btn:hover {
+    background-color: #ff5757;
+    color: #1e1e1e;
+}
+
+/* --- قسمت نوار جستجوی متحرک (CSS-only) --- */
+
+/* استایل‌دهی دکمه جستجوی دایره‌ای */
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border: 2px solid #ff5757;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 2;
+}
+
+.search-btn i {
+    color: #1e1e1e;
+    font-size: 20px;
+}
+
+/* استایل‌دهی کادر جستجو */
+.search-box {
+    overflow: hidden;
+    width: 0;
+    transition: width 0.5s ease-in-out, opacity 0.5s;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.search-box input {
+    width: 200px;
+    padding: 8px 10px;
+    border: 2px solid #ff5757;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1e1e1e;
+    transform: translateX(-100%); /* تغییر جهت انیمیشن برای LTR */
+    transition: transform 0.5s ease-in-out;
+    margin-right: 10px; /* فاصله از دکمه جستجو در LTR */
+}
+
+/* انیمیشن با استفاده از چک‌باکس و انتخابگر :checked */
+#search-toggle:checked ~ .search-box {
+    width: 210px;
+    opacity: 1;
+}
+
+#search-toggle:checked ~ .search-box input {
+    transform: translateX(0); /* حرکت به موقعیت نهایی */
+}
+
+/* ========================= */
+/* FOOTER STYLING      */
+/* ========================= */
+
+/* Footer Styling */
+footer {
+    background-color: #1e1e1e; /* Dark color similar to the image */
+    padding-top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    /* این پوزیشن fixed فوتر را در پایین صفحه قفل می‌کند، در صورت نیاز حذف کنید */
+    /* position: fixed; */ 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 40px;
+}
+
+/* Columns */
+.col-main,
+.col-categories,
+.col-tags,
+.col-social-subscribe {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.col-social-subscribe {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column Headings */
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Main Text Column */
+.col-main p {
+    color: #999999;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: left; /* Aligns text left for LTR */
+}
+
+.col-main .read-more {
+    color: #ffd153; /* Highlight color */
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.col-main .read-more:hover {
+    color: #ff5757;
+}
+
+/* Categories Column */
+.col-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Aligns list left for LTR */
+}
+
+.col-categories li {
+    margin-bottom: 10px;
+}
+
+.col-categories a {
+    color: #999999;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.col-categories a::after {
+    content: '';
+    position: absolute;
+    left: 0; 
+    bottom: -2px;
+    width: 0;
+    height: 3px;
+    background-color: #7aff96;
+    transition: width 0.3s;
+}
+
+.col-categories a:hover {
+    color: #ffd153;
+    width: 100%;
+}
+
+.col-categories a:hover::after {
+    color: #ffd153;
+    width: 100%;
+}
+
+/* Tag Cloud Column */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between tags */
+    text-align: left; /* Ensures tags start from the left */
+}
+
+.tag-cloud a {
+    color: #ffffff;
+    background-color: #333333;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.tag-cloud a:hover {
+    background-color: #ffd153;
+    color: #1e1e1e;
+}
+
+/* Subscribe Section */
+.subscribe-section {
+    margin-bottom: 30px;
+}
+
+.subscribe-form {
+    display: flex;
+    position: relative;
+    border: none;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #444;
+    background-color: #333;
+    color: #7aff96;
+    outline: none;
+    text-align: left; /* Input text direction */
+    border-radius: 8px;
+}
+
+.subscribe-form input::placeholder {
+    color: #888;
+}
+
+.subscribe-form button {
+    background-color: #ffd153;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #1e1e1e;
+    border-radius: 8px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe-form button i {
+    font-size: 18px;
+}
+
+.subscribe-form button:hover {
+    background-color: #ff5757;
+}
+
+/* Follow Us Section */
+.follow-section {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #333;
+    color: #ffffff;
+    margin-right: 5px; /* Spacing between icons */
+    border-radius: 3px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #ffd153;
+    color: #1e1e1e;
+}
+
+/* Footer Bottom (Copyright) */
+.footer-bottom {
+    background-color: #181818;
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    max-width: none;
+    width: 100%;
+    margin: 30px auto 0;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #7aff96;
+    box-shadow: 0 2px 16px 4px #7aff96;
+}
+
+.footer-bottom .copyright {
+    color: #888;
+    margin: 0;
+}
+
+.footer-bottom .legal-links a {
+    color: #888;
+    margin-left: 20px; /* Spacing between links */
+    transition: color 0.3s;
+}
+
+.footer-bottom .legal-links a:hover {
+    color: #ffd153;
+}
+
+/* Responsiveness (Optional) */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-wrap: wrap;
+    }
+
+    .col-main,
+    .col-categories,
+    .col-tags,
+    .col-social-subscribe {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom .legal-links {
+        margin-top: 10px;
+    }
+
+    .footer-bottom .legal-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-main,
+    .col-categories,
+    .col-tags,
+    .col-social-subscribe {
+        width: 100%;
+    }
+}
+
+/* code haye marbot be slide */
+
+.slideshow-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 70vh; 
+    background: #000;
+    width: 100vw;
+  }
+
+  .slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* فیت کامل بدون کشیدگی */
+    display: block;
+}
+
+.mySlides {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides.active {
+    display: block;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+ 
+.text {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px 24px;
+    border-radius: 8px;
+    max-width: 90%;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+
+.numbertext {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 15px 0;
+    background: #ffd153;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active, .dot:hover {
+    background-color: #1e1e1e;
+    transform: scale(1.2);
+} 
+  
+  .fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    .slideshow-container img {
+      height: 250px;
+    }
+  }
+  
+
+
+
+ /* categories style */
+ .category-container {
+    padding: 15px 10px;
+    margin-top: 85px;
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+
+  .category-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 18px;
+    padding: 10px 0;
+  }
+
+  .category-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-item {
+    flex: 0 0 auto;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .category-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .category-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e2;
+  }
+
+  .category-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .category-label {
+    font-size: 11px;
+    color: #3f4064;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
+  }
+
+
+
+  /* Puffery styles */
+
+
+  /* Puffery Section - متن در چپ، تصویر در راست */
+.puffery-section {
+    padding: 80px 20px;
+    background-color: #ffd153;
+    direction: rtl; /* برای فارسی */
+  }
+  
+  .puffery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .puffery-text {
+    flex: 1;
+    min-width: 300px;
+    color: #1e1e1e;
+    font-size: 1.45rem;
+    line-height: 2;
+    text-align: right;
+  }
+  
+  .puffery-text p {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .puffery-image {
+    flex: 0 0 280px;
+    text-align: center;
+  }
+  
+  .puffery-image img {
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #7aff96;
+    box-shadow: 0 0 25px rgba(122, 255, 150, 0.5);
+    transition: all 0.4s ease;
+  }
+  
+  .puffery-image img:hover {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 0 35px rgba(122, 255, 150, 0.7);
+    border-color: #5cdb7a;
+  }
+  
+  
+  @media (max-width: 992px) {
+    .puffery-container {
+      gap: 30px;
+      justify-content: center;
+    }
+    .puffery-image {
+      flex: 0 0 240px;
+    }
+    .puffery-image img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .puffery-container {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .puffery-text {
+      text-align: center;
+    }
+    .puffery-image img {
+      width: 200px;
+      height: 200px;
+    }
+  }
