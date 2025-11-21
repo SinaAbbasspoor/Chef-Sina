@@ -659,87 +659,520 @@ h3 {
   }
 
 
+  /* tweet slider */
+  .tweet-section {
+    max-width: 1400px;
+    width: 95%;
+    margin: 80px auto 40px;
+    padding: 50px 40px;
+    background: #1e1e1e;
+    border-radius: 28px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    color: #f0f0f0;
+  }
+
+  .tweet-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .x-icon {
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .tweet-title h3 {
+    margin-bottom: 6px;
+    font-size: 1.8rem;
+  }
+
+  .tweet-title p {
+    color: #a1a1a1;
+    font-size: 0.95rem;
+  }
+
+  .tweet-slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+
+  .tweet-track-wrapper {
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+  }
+
+  .tweet-track {
+    display: flex;
+    gap: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+  }
+
+  .tweet-card {
+    background: #242424;
+    border-radius: 20px;
+    padding: 32px;
+    flex: 0 0 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.45);
+    width: 100%;
+  }
+
+  .tweet-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .tweet-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ffd153;
+    color: #1e1e1e;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 209, 83, 0.3);
+  }
+
+  .tweet-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .tweet-user {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+
+  .tweet-handle {
+    color: #7a7a7a;
+    font-size: 0.85rem;
+  }
+
+  .x-icon-small {
+    color: #ffffff;
+    margin-left: auto;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .tweet-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .tweet-actions {
+    display: flex;
+    gap: 24px;
+    color: #9f9f9f;
+    font-size: 0.95rem;
+    margin-top: auto;
+  }
+
+  .tweet-actions i {
+    color: #ffd153;
+    margin-right: 6px;
+    font-size: 1.1rem;
+  }
+
+  .tweet-nav {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffd153;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tweet-nav:hover {
+    background: rgba(255, 209, 83, 0.2);
+    transform: scale(1.1);
+    border-color: rgba(255, 209, 83, 0.5);
+  }
+
+  .tweet-nav:active {
+    transform: scale(0.95);
+  }
+
+  .tweet-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .tweet-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .tweet-dot.active {
+    background: #ffd153;
+    transform: scale(1.3);
+  }
+
+  .tweet-dot:hover {
+    background: rgba(255, 209, 83, 0.6);
+    transform: scale(1.15);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .tweet-section {
+      max-width: 95%;
+      padding: 40px 30px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .tweet-section {
+      padding: 35px 25px;
+    }
+
+    .tweet-card {
+      padding: 28px;
+      min-height: 260px;
+    }
+
+    .tweet-title h3 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tweet-section {
+      padding: 30px 20px;
+      margin: 60px auto 30px;
+    }
+
+    .tweet-title {
+      margin-bottom: 24px;
+    }
+
+    .tweet-title h3 {
+      font-size: 1.4rem;
+    }
+
+    .x-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .tweet-slider {
+      gap: 12px;
+    }
+
+    .tweet-nav {
+      width: 44px;
+      height: 44px;
+      font-size: 18px;
+    }
+
+    .tweet-card {
+      padding: 24px;
+      min-height: 240px;
+    }
+
+    .tweet-avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    .tweet-body {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .tweet-actions {
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .tweet-section {
+      padding: 25px 15px;
+      margin: 40px auto 25px;
+      border-radius: 20px;
+    }
+
+    .tweet-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .tweet-title h3 {
+      font-size: 1.3rem;
+    }
+
+    .tweet-slider {
+      flex-direction: row;
+      gap: 8px;
+    }
+
+    .tweet-nav {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    .tweet-card {
+      padding: 20px;
+      min-height: 220px;
+      border-radius: 16px;
+    }
+
+    .tweet-avatar {
+      width: 44px;
+      height: 44px;
+    }
+
+    .tweet-user {
+      font-size: 1rem;
+    }
+
+    .tweet-body {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .tweet-actions {
+      gap: 16px;
+      font-size: 0.85rem;
+    }
+
+    .tweet-dots {
+      margin-top: 20px;
+    }
+  }
 
   /* Puffery styles */
 
-
-  /* Puffery Section - متن در چپ، تصویر در راست */
-.puffery-section {
+  /* Puffery Section - شعار روی صفحه مشکی */
+  .puffery-section {
     padding: 80px 20px;
-    background-color: #ffd153;
+    background-color: #1e1e1e;
     direction: rtl; /* برای فارسی */
   }
   
   .puffery-container {
-    max-width: 1200px;
+    max-width: 1400px;
+    width: 95%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+  }
+  
+  .puffery-card {
+    flex: 1;
+    min-width: 400px;
+    max-width: 600px;
+    background: #242424;
+    border-radius: 24px;
+    padding: 50px 45px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .puffery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
   }
   
   .puffery-text {
-    flex: 1;
-    min-width: 300px;
-    color: #1e1e1e;
-    font-size: 1.45rem;
-    line-height: 2;
+    color: #f0f0f0;
     text-align: right;
+  }
+
+  .puffery-title {
+    color: #ffd153;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .puffery-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd153, #7aff96);
+    border-radius: 2px;
   }
   
   .puffery-text p {
     margin: 0;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #e0e0e0;
+    letter-spacing: 0.3px;
   }
   
   .puffery-image {
-    flex: 0 0 280px;
+    flex: 0 0 320px;
     text-align: center;
   }
   
   .puffery-image img {
-    width: 256px;
-    height: 256px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #7aff96;
-    box-shadow: 0 0 25px rgba(122, 255, 150, 0.5);
-    transition: all 0.4s ease;
+    border: 6px solid #ffd153;
+    box-shadow: 0 0 30px rgba(255, 209, 83, 0.4), 0 0 60px rgba(122, 255, 150, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .puffery-image img:hover {
-    transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 0 35px rgba(122, 255, 150, 0.7);
-    border-color: #5cdb7a;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 40px rgba(255, 209, 83, 0.6), 0 0 80px rgba(122, 255, 150, 0.3);
+    border-color: #7aff96;
   }
   
   
+  @media (max-width: 1200px) {
+    .puffery-container {
+      max-width: 95%;
+      gap: 50px;
+    }
+  }
+
   @media (max-width: 992px) {
     .puffery-container {
-      gap: 30px;
+      gap: 40px;
       justify-content: center;
     }
+
+    .puffery-card {
+      min-width: 350px;
+      padding: 40px 35px;
+    }
+
+    .puffery-title {
+      font-size: 1.8rem;
+    }
+
+    .puffery-text p {
+      font-size: 1.2rem;
+    }
+
     .puffery-image {
-      flex: 0 0 240px;
+      flex: 0 0 280px;
     }
     .puffery-image img {
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
     }
   }
   
   @media (max-width: 768px) {
-    .puffery-container {
-      flex-direction: column-reverse;
-      text-align: center;
+    .puffery-section {
+      padding: 60px 20px;
     }
+
+    .puffery-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .puffery-card {
+      min-width: 100%;
+      max-width: 100%;
+      padding: 35px 30px;
+      order: 1;
+    }
+
+    .puffery-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
     .puffery-text {
       text-align: center;
     }
+
+    .puffery-text p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+
+    .puffery-image {
+      order: 2;
+      flex: 0 0 auto;
+    }
+
     .puffery-image img {
-      width: 200px;
-      height: 200px;
+      width: 240px;
+      height: 240px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .puffery-section {
+      padding: 50px 15px;
+    }
+
+    .puffery-card {
+      padding: 30px 25px;
+      border-radius: 20px;
+    }
+
+    .puffery-title {
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .puffery-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .puffery-image img {
+      width: 220px;
+      height: 220px;
+      border-width: 5px;
     }
   }
