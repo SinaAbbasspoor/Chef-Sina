@@ -60,7 +60,46 @@ signUpBtn.addEventListener("click",()=>{
 });
 
 
+// tweet slider logic
+const tweetTrack = document.getElementById("tweetTrack");
+const tweetCards = tweetTrack ? tweetTrack.querySelectorAll(".tweet-card") : [];
+const tweetDots = document.querySelectorAll(".tweet-dot");
+let tweetIndex = 0;
+let tweetIntervalId;
 
+function updateTweetSlider() {
+  if (!tweetTrack || !tweetCards.length) return;
+  tweetTrack.style.transform = `translateX(-${tweetIndex * 100}%)`;
+  tweetDots.forEach((dot, idx) => {
+    dot.classList.toggle("active", idx === tweetIndex);
+  });
+}
 
+function resetTweetInterval() {
+  if (!tweetTrack || !tweetCards.length) return;
+  clearInterval(tweetIntervalId);
+  tweetIntervalId = setInterval(() => changeTweet(1, true), 6500);
+}
+
+function changeTweet(step, isAuto = false) {
+  if (!tweetTrack || !tweetCards.length) return;
+  tweetIndex = (tweetIndex + step + tweetCards.length) % tweetCards.length;
+  updateTweetSlider();
+  if (!isAuto) {
+    resetTweetInterval();
+  }
+}
+
+function goToTweet(index) {
+  if (!tweetTrack || !tweetCards.length) return;
+  tweetIndex = index;
+  updateTweetSlider();
+  resetTweetInterval();
+}
+
+if (tweetTrack && tweetCards.length) {
+  updateTweetSlider();
+  resetTweetInterval();
+}
 
 
