@@ -14,6 +14,12 @@
     <div class="nav-content">
       <a href="#" class="logo"><i class="bx bxs-bowl-hot bx-tada"></i>Chef-Sina</a>
 
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">Menu</a></li>
@@ -38,6 +44,30 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h3>Menu</h3>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Menu</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Pantry</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-actions">
+      <button class="mobile-sign-in-btn" onclick="closeMobileMenu()">Sign In</button>
+      <button class="mobile-sign-up-btn" onclick="closeMobileMenu()">Sign Up</button>
+    </div>
+  </div>
 
   <!-- enja body site -->
   <!-- slide -->
@@ -475,7 +505,6 @@
     <div class="lightbox-caption"></div>
   </div>
 
-  <main style="min-height: 50vh; padding: 20px; text-align: center"></main>
   <!-- footer section -->
   <footer>
     <div class="footer-container">

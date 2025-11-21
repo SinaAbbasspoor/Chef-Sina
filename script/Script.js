@@ -225,3 +225,60 @@ document.addEventListener('click', function (event) {
   }
 });
 
+// Mobile Menu Logic
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+function openMobileMenu() {
+  if (mobileMenu && mobileMenuOverlay && mobileMenuToggle) {
+    mobileMenu.classList.add('active');
+    mobileMenuOverlay.classList.add('active');
+    mobileMenuToggle.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+}
+
+function closeMobileMenu() {
+  if (mobileMenu && mobileMenuOverlay && mobileMenuToggle) {
+    mobileMenu.classList.remove('active');
+    mobileMenuOverlay.classList.remove('active');
+    mobileMenuToggle.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (mobileMenu && mobileMenu.classList.contains('active')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+}
+
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+}
+
+if (mobileMenuOverlay) {
+  mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+}
+
+// Close menu on Escape key
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+    closeMobileMenu();
+  }
+});
+
+// Prevent menu from closing when clicking inside it
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', function (event) {
+    event.stopPropagation();
+  });
+}
+
