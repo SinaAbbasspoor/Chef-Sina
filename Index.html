@@ -256,7 +256,7 @@
     </div>
   </section>
 
-  
+
   <!-- puffery section -->
   <section class="puffery-section">
     <div class="puffery-container">
@@ -273,7 +273,7 @@
       </div>
     </div>
   </section>
- <!-- discounts section -->
+  <!-- discounts section -->
   <section class="discounts-section">
     <div class="discounts-header">
       <i class='bx bx-purchase-tag-alt'></i>
@@ -391,6 +391,89 @@
       <span class="product-dot" onclick="goToProduct(5)"></span>
     </div>
   </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="gallery-header">
+      <i class='bx bx-images'></i>
+      <h2>Cafe Gallery</h2>
+    </div>
+    <!-- gallery grid -->
+    <div class="gallery-grid">
+      <!-- gallery item 1 -->
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="pictrue/cafe shop img 1.jpg" alt="Cafe Interior">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 2 -->
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="pictrue/cafe shop img 2.jpg" alt="Coffee Making">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 3 -->
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="pictrue/cafe shop img 3.jpg" alt="Desserts">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 4 -->
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="pictrue/cafe shop img 4.jpg" alt="Drinks">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 5 -->
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="pictrue/cafe shop img 5.jpg" alt="Specialty Coffee">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 6 -->
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="pictrue/cafe shop img 6.jpg" alt="Cafe Atmosphere">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 7 -->
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="pictrue/cafe shop img 7.jpg" alt="Barista">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 8 -->
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="pictrue/cafe shop img 8.jpg" alt="Fresh Pastries">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 9 -->
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="pictrue/cafe shop img 9.jpg" alt="Cafe View">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <main style="min-height: 50vh; padding: 20px; text-align: center"></main>
   <!-- footer section -->

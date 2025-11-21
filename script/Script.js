@@ -145,3 +145,83 @@ if (productsTrack && productCards.length) {
   resetProductInterval();
 }
 
+
+// Gallery Lightbox Logic
+const galleryImages = [
+  { src: 'pictrue/americano.jpg', alt: 'Cafe Interior' },
+  { src: 'pictrue/late.jpg', alt: 'Coffee Making' },
+  { src: 'pictrue/icecream.jpg', alt: 'Desserts' },
+  { src: 'pictrue/milkeshake.jpg', alt: 'Drinks' },
+  { src: 'pictrue/matcha.jpg', alt: 'Specialty Coffee' },
+  { src: 'pictrue/americano.jpg', alt: 'Cafe Atmosphere' },
+  { src: 'pictrue/late.jpg', alt: 'Barista' },
+  { src: 'pictrue/icecream.jpg', alt: 'Fresh Pastries' },
+  { src: 'pictrue/milkeshake.jpg', alt: 'Cafe View' }
+];
+
+let currentLightboxIndex = 0;
+
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = galleryImages[index].src;
+    lightboxImg.alt = galleryImages[index].alt;
+    if (lightboxCaption) {
+      lightboxCaption.textContent = galleryImages[index].alt;
+    }
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
+function changeLightboxImage(direction) {
+  currentLightboxIndex = (currentLightboxIndex + direction + galleryImages.length) % galleryImages.length;
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+
+  if (lightboxImg) {
+    lightboxImg.src = galleryImages[currentLightboxIndex].src;
+    lightboxImg.alt = galleryImages[currentLightboxIndex].alt;
+    if (lightboxCaption) {
+      lightboxCaption.textContent = galleryImages[currentLightboxIndex].alt;
+    }
+  }
+}
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', function (event) {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox && lightbox.classList.contains('active')) {
+    if (event.key === 'Escape') {
+      closeLightbox();
+    } else if (event.key === 'ArrowLeft') {
+      changeLightboxImage(-1);
+    } else if (event.key === 'ArrowRight') {
+      changeLightboxImage(1);
+    }
+  }
+});
+
+// Prevent lightbox from closing when clicking on image
+document.addEventListener('click', function (event) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  if (lightbox && lightbox.classList.contains('active')) {
+    if (event.target === lightboxImg || event.target.closest('.lightbox-content')) {
+      event.stopPropagation();
+    }
+  }
+});
+
