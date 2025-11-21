@@ -14,6 +14,12 @@
     <div class="nav-content">
       <a href="#" class="logo"><i class="bx bxs-bowl-hot bx-tada"></i>Chef-Sina</a>
 
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">Menu</a></li>
@@ -38,6 +44,30 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h3>Menu</h3>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Menu</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Pantry</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-actions">
+      <button class="mobile-sign-in-btn" onclick="closeMobileMenu()">Sign In</button>
+      <button class="mobile-sign-up-btn" onclick="closeMobileMenu()">Sign Up</button>
+    </div>
+  </div>
 
   <!-- enja body site -->
   <!-- slide -->
@@ -124,7 +154,7 @@
     </div>
     <!-- <button class="scroll-btn scroll-right" onclick="scrollCategories(150)">❯</button> -->
   </div>
-
+  <!-- tweet section -->
   <section class="tweet-section">
     <div class="tweet-title">
       <svg class="x-icon" viewBox="0 0 24 24" fill="currentColor" width="38" height="38">
@@ -143,6 +173,7 @@
       </button>
       <div class="tweet-track-wrapper">
         <div class="tweet-track" id="tweetTrack">
+          <!-- tweet card 1 -->
           <article class="tweet-card">
             <header class="tweet-card-header">
               <div class="tweet-avatar">
@@ -167,7 +198,7 @@
               <span><i class="bx bx-heart"></i> 215</span>
             </footer>
           </article>
-
+          <!-- tweet card 2 -->
           <article class="tweet-card">
             <header class="tweet-card-header">
               <div class="tweet-avatar">
@@ -192,7 +223,7 @@
               <span><i class="bx bx-heart"></i> 143</span>
             </footer>
           </article>
-
+          <!-- tweet card 3 -->
           <article class="tweet-card">
             <header class="tweet-card-header">
               <div class="tweet-avatar">
@@ -217,7 +248,7 @@
               <span><i class="bx bx-heart"></i> 189</span>
             </footer>
           </article>
-
+          <!-- tweet card 4 -->
           <article class="tweet-card">
             <header class="tweet-card-header">
               <div class="tweet-avatar">
@@ -255,6 +286,8 @@
     </div>
   </section>
 
+
+  <!-- puffery section -->
   <section class="puffery-section">
     <div class="puffery-container">
       <div class="puffery-card">
@@ -270,7 +303,7 @@
       </div>
     </div>
   </section>
-
+  <!-- discounts section -->
   <section class="discounts-section">
     <div class="discounts-header">
       <i class='bx bx-purchase-tag-alt'></i>
@@ -283,6 +316,7 @@
       </button>
       <div class="products-track-wrapper">
         <div class="products-track" id="productsTrack">
+          <!-- product card 1 -->
           <div class="product-card">
             <div class="product-badge">-20%</div>
             <div class="product-image">
@@ -297,7 +331,7 @@
               </div>
             </div>
           </div>
-
+          <!-- product card 2 -->
           <div class="product-card">
             <div class="product-badge">-15%</div>
             <div class="product-image">
@@ -312,7 +346,7 @@
               </div>
             </div>
           </div>
-
+          <!-- product card 3 -->
           <div class="product-card">
             <div class="product-badge">-25%</div>
             <div class="product-image">
@@ -327,7 +361,7 @@
               </div>
             </div>
           </div>
-
+          <!-- product card 4 -->
           <div class="product-card">
             <div class="product-badge">-30%</div>
             <div class="product-image">
@@ -342,7 +376,7 @@
               </div>
             </div>
           </div>
-
+          <!-- product card 5 -->
           <div class="product-card">
             <div class="product-badge">-20%</div>
             <div class="product-image">
@@ -357,7 +391,7 @@
               </div>
             </div>
           </div>
-
+          <!-- product card 6 -->
           <div class="product-card">
             <div class="product-badge">-18%</div>
             <div class="product-image">
@@ -388,8 +422,90 @@
     </div>
   </section>
 
-  <main style="min-height: 50vh; padding: 20px; text-align: center"></main>
-  <!-- your footer -->
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="gallery-header">
+      <i class='bx bx-images'></i>
+      <h2>Cafe Gallery</h2>
+    </div>
+    <!-- gallery grid -->
+    <div class="gallery-grid">
+      <!-- gallery item 1 -->
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="pictrue/cafe shop img 1.jpg" alt="Cafe Interior">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 2 -->
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="pictrue/cafe shop img 2.jpg" alt="Coffee Making">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 3 -->
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="pictrue/cafe shop img 3.jpg" alt="Desserts">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 4 -->
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="pictrue/cafe shop img 4.jpg" alt="Drinks">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 5 -->
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="pictrue/cafe shop img 5.jpg" alt="Specialty Coffee">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 6 -->
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="pictrue/cafe shop img 6.jpg" alt="Cafe Atmosphere">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 7 -->
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="pictrue/cafe shop img 7.jpg" alt="Barista">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 8 -->
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="pictrue/cafe shop img 8.jpg" alt="Fresh Pastries">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+      <!-- gallery item 9 -->
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="pictrue/cafe shop img 9.jpg" alt="Cafe View">
+        <div class="gallery-overlay">
+          <i class='bx bx-zoom-in'></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <!-- footer section -->
   <footer>
     <div class="footer-container">
       <div class="col-main">
