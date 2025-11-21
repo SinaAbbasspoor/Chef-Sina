@@ -2503,6 +2503,27 @@ h3 {
   transform: translateY(-2px);
 }
 
+
+/* Menu Page Styles */
+#menu-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 20px; 
+  font-size: 2rem;     
+  font-weight: 700;    
+  color: #000;     
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
 /* Responsive Navigation */
 @media (max-width: 992px) {
   .nav-links {

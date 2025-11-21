@@ -44,7 +44,6 @@ setInterval(() => {
 
 let signInBtn = document.querySelector(".sign-in-btn");
 let signUpBtn = document.querySelector(".sign-up-btn");
-
 //Limitations
 
 function constraintAlert() {
