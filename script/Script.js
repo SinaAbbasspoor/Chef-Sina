@@ -42,20 +42,20 @@ setInterval(() => {
 
 
 
-let signInBtn=document.querySelector(".sign-in-btn");
-let signUpBtn=document.querySelector(".sign-up-btn");
+let signInBtn = document.querySelector(".sign-in-btn");
+let signUpBtn = document.querySelector(".sign-up-btn");
 
 //Limitations
 
-function constraintAlert(){
+function constraintAlert() {
   alert("This page is under construction!");
 }
 
-signInBtn.addEventListener("click",()=>{
+signInBtn.addEventListener("click", () => {
   constraintAlert();
 });
 
-signUpBtn.addEventListener("click",()=>{
+signUpBtn.addEventListener("click", () => {
   constraintAlert();
 });
 
@@ -102,4 +102,46 @@ if (tweetTrack && tweetCards.length) {
   resetTweetInterval();
 }
 
+
+// Products slider logic
+const productsTrack = document.getElementById("productsTrack");
+const productCards = productsTrack ? productsTrack.querySelectorAll(".product-card") : [];
+const productDots = document.querySelectorAll(".product-dot");
+let productIndex = 0;
+let productIntervalId;
+
+function updateProductSlider() {
+  if (!productsTrack || !productCards.length) return;
+  productsTrack.style.transform = `translateX(-${productIndex * 100}%)`;
+  productDots.forEach((dot, idx) => {
+    dot.classList.toggle("active", idx === productIndex);
+  });
+}
+
+function resetProductInterval() {
+  if (!productsTrack || !productCards.length) return;
+  clearInterval(productIntervalId);
+  productIntervalId = setInterval(() => changeProduct(1, true), 7000);
+}
+
+function changeProduct(step, isAuto = false) {
+  if (!productsTrack || !productCards.length) return;
+  productIndex = (productIndex + step + productCards.length) % productCards.length;
+  updateProductSlider();
+  if (!isAuto) {
+    resetProductInterval();
+  }
+}
+
+function goToProduct(index) {
+  if (!productsTrack || !productCards.length) return;
+  productIndex = index;
+  updateProductSlider();
+  resetProductInterval();
+}
+
+if (productsTrack && productCards.length) {
+  updateProductSlider();
+  resetProductInterval();
+}
 
