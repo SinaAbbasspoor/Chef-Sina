@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+    <!-- navbar section -->
+    <nav class="navbar">
+        <div class="nav-content">
+          <a href="#" class="logo"><i class="bx bxs-bowl-hot bx-tada"></i>Chef-Sina</a>
+    
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+    
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Pantry</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+    
+          <div class="nav-utilities">
+            <input type="checkbox" id="search-toggle" hidden />
+    
+            <div class="search-box">
+              <input type="text" placeholder="Search" />
+            </div>
+    
+            <label for="search-toggle" class="search-btn">
+              <i class="bx bx-search"></i>
+            </label>
+    
+            <button class="sign-in-btn">Sign In</button>
+            <button class="sign-up-btn">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+          <h3>Menu</h3>
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-links">
+          <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Menu</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Pantry</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">About</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+          <button class="mobile-sign-in-btn" onclick="closeMobileMenu()">Sign In</button>
+          <button class="mobile-sign-up-btn" onclick="closeMobileMenu()">Sign Up</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- main section -->
+    <h1 id="menu-title">Menu</h1>    
+    <!-- cold drinks section -->
+     <div class="section-title">cold Drinks</div>
+      <div class="products-grid">
+        <!-- product card 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Caramel Milkshake.jpg" alt="Caramel Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Caramel Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+        <!-- product card 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Coffee Milkshake.jpg" alt="Coffee milk">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Coffee Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+      <!-- product card 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Espresso Milkshake.jpg" alt="Espresso Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Espresso Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+        <!-- product card 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Vanilla Milkshake.jpg" alt="Vanilla Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Vanilla Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+        <!-- product card 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Mocha Milkshake.jpg" alt="Mocha Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Mocha Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- product card 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Strawberry Milkshake.jpg" alt="Strawberry Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Strawberry Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+
+      <!-- product card 7 -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="pictrue/Chocolate Milkshake.jpg" alt="Chocolate Milkshake">
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Chocolate Milkshake</h3>
+        <p class="product-description">no description</p>
+        <div class="product-price">
+          <span class="new-price">120,000 T</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- product card 8 -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="pictrue/Banana Smoothie.jpg" alt="banana smoothies">
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Banana Smoothie</h3>
+        <p class="product-description">no description</p>
+        <div class="product-price">
+          <span class="new-price">120,000 T</span>
+        </div>
+      </div>
+    </div>
+
+
+        <!-- product card 9 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Celery Juice.jpg" alt="Celery Juice">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Celery Juice</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- product card 10 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/mojito.jpg" alt="mojito">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">mojito</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+        <!-- product card 11 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="pictrue/Mango Milkshake.jpg " alt="Mango Milkshake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Mango Milkshake</h3>
+            <p class="product-description">no description</p>
+            <div class="product-price">
+              <span class="new-price">120,000 T</span>
+            </div>
+          </div>
+        </div>
+                <!-- product card 12 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="pictrue/orange juice.jpg" alt="orange juice">
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">orange juice</h3>
+                    <p class="product-description">no description</p>
+                    <div class="product-price">
+                      <span class="new-price">120,000 T</span>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  
+
+      <!-- hot drinks section -->
+
+      <!-- add more hot drinks here -->
+
+    <!-- footer section -->
+    <!-- add it please dont forget it :)-->
+    
+    <script src="script/Script.js"></script>
+</body>
+</html>
