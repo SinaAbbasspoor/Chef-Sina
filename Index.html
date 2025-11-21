@@ -86,7 +86,7 @@
       <!-- item1 -->
       <!-- hot drinks -->
       <div class="category-item">
-        <div class="category-icon"><i class='bxrds  bx-coffee-cup'></i> </div>
+        <div class="category-icon"><i class='bx bx-coffee'></i></div>
         <div class="category-label">Hot drinks</div>
       </div>
 
@@ -94,7 +94,7 @@
       <!-- item2 -->
       <!-- cold deinks -->
       <div class="category-item">
-        <div class="category-icon"><i class='bxrds  bx-snowflake'></i></div>
+        <div class="category-icon"><i class='bx bx-water'></i></div>
         <div class="category-label">cold drinks</div>
       </div>
 
@@ -102,7 +102,7 @@
       <!-- item 3-->
       <!-- milk shakes -->
       <div class="category-item">
-        <div class="category-icon"><i class='bxrds  bx-milk-bottle'></i> </div>
+        <div class="category-icon"><i class='bx bx-drink'></i></div>
         <div class="category-label">milk shakes</div>
       </div>
 
@@ -110,14 +110,14 @@
       <!-- item 4-->
       <!-- icecream -->
       <div class="category-item">
-        <div class="category-icon"><i class='bxrds  bx-icecream'></i></div>
+        <div class="category-icon"><i class='bx bx-cake'></i></div>
         <div class="category-label">icecream</div>
       </div>
 
 
       <!-- item 5-->
       <div class="category-item">
-        <div class="category-icon"><i class='bxrds  bx-dots-horizontal'></i> </div>
+        <div class="category-icon"><i class='bx bx-dots-horizontal-rounded'></i></div>
         <div class="category-label">more</div>
       </div>
 
@@ -271,7 +271,122 @@
     </div>
   </section>
 
+  <section class="discounts-section">
+    <div class="discounts-header">
+      <i class='bx bx-purchase-tag-alt'></i>
+      <h2>Amazing Discounts</h2>
+    </div>
 
+    <div class="products-slider">
+      <button class="product-nav prev" aria-label="Previous product" onclick="changeProduct(-1)">
+        &#10094;
+      </button>
+      <div class="products-track-wrapper">
+        <div class="products-track" id="productsTrack">
+          <div class="product-card">
+            <div class="product-badge">-20%</div>
+            <div class="product-image">
+              <img src="pictrue/americano.jpg" alt="Americano">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Americano</h3>
+              <p class="product-description">Rich espresso with hot water</p>
+              <div class="product-price">
+                <span class="old-price">150,000 T</span>
+                <span class="new-price">120,000 T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">-15%</div>
+            <div class="product-image">
+              <img src="pictrue/late.jpg" alt="Latte">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Caffe Latte</h3>
+              <p class="product-description">Espresso with steamed milk</p>
+              <div class="product-price">
+                <span class="old-price">180,000 T</span>
+                <span class="new-price">153,000 T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">-25%</div>
+            <div class="product-image">
+              <img src="pictrue/icecream.jpg" alt="Ice Cream">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Ice Cream</h3>
+              <p class="product-description">Fresh handmade ice cream</p>
+              <div class="product-price">
+                <span class="old-price">120,000 T</span>
+                <span class="new-price">90,000 T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">-30%</div>
+            <div class="product-image">
+              <img src="pictrue/milkeshake.jpg" alt="Milkshake">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Milkshake</h3>
+              <p class="product-description">Creamy vanilla milkshake</p>
+              <div class="product-price">
+                <span class="old-price">140,000 T</span>
+                <span class="new-price">98,000 T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">-20%</div>
+            <div class="product-image">
+              <img src="pictrue/matcha.jpg" alt="Matcha">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Matcha Latte</h3>
+              <p class="product-description">Japanese green tea latte</p>
+              <div class="product-price">
+                <span class="old-price">200,000 T</span>
+                <span class="new-price">160,000 T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">-18%</div>
+            <div class="product-image">
+              <img src="pictrue/americano.jpg" alt="Cappuccino">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cappuccino</h3>
+              <p class="product-description">Espresso with frothed milk</p>
+              <div class="product-price">
+                <span class="old-price">170,000 T</span>
+                <span class="new-price">139,400 T</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="product-nav next" aria-label="Next product" onclick="changeProduct(1)">
+        &#10095;
+      </button>
+    </div>
+    <div class="product-dots">
+      <span class="product-dot active" onclick="goToProduct(0)"></span>
+      <span class="product-dot" onclick="goToProduct(1)"></span>
+      <span class="product-dot" onclick="goToProduct(2)"></span>
+      <span class="product-dot" onclick="goToProduct(3)"></span>
+      <span class="product-dot" onclick="goToProduct(4)"></span>
+      <span class="product-dot" onclick="goToProduct(5)"></span>
+    </div>
+  </section>
 
   <main style="min-height: 50vh; padding: 20px; text-align: center"></main>
   <!-- your footer -->
