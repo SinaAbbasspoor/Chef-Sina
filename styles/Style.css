@@ -2503,26 +2503,150 @@ h3 {
   transform: translateY(-2px);
 }
 
-
-/* Menu Page Styles */
+/* Menu Container */
+.menu-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 #menu-title {
-  display: block;
-  width: 100%;
   text-align: center;
-  margin: 0 auto 20px; 
-  font-size: 2rem;     
-  font-weight: 700;    
-  color: #000;     
+  width: 100%;
+  margin: 40px auto;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffd153;
+}
+/* Sticky Category Tabs */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 16px;
+  background: #1e1e1e;
+  border-radius: 16px;
+  position: sticky;
+  top: 100px;
+  z-index: 900;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-.section-title {
-  text-align: center;
+.category-tab {
+  background: #242424;
+  color: #ccc;
+  border: 2px solid transparent;
+  padding: 12px 28px;
+  border-radius: 50px;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin: 20px 0 10px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 140px;
 }
+
+.category-tab:hover {
+  background: #7aff96;
+  color: #1e1e1e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(122, 255, 150, 0.3);
+}
+
+.category-tab.active {
+  background: #ffd153;
+  color: #1e1e1e;
+  border-color: #ffd153;
+  box-shadow: 0 8px 25px rgba(255, 209, 83, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Grid with Animation */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  transition: all 0.4s ease;
+}
+
+.product-card {
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+} 
+/* ===== MENU FILTER – FINAL & WORKING 100% ===== */
+.menu-filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 50px 0 40px;
+  padding: 15px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  position: sticky;
+  top: 90px;
+  z-index: 900;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.filter-tab {
+  background: transparent;
+  color: #ccc;
+  border: 2px solid #555;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.filter-tab:hover {
+  color: #ffd153;
+  border-color: #ffd153;
+  transform: translateY(-4px);
+}
+
+.filter-tab.active {
+  background: #ffd153;
+  color: #1e1e1e;
+  border-color: #ffd153;
+  box-shadow: 0 10px 25px rgba(255,209,83,0.5);
+  transform: translateY(-4px);
+}
+
+/* گرید منو */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 35px;
+  padding: 20px 0;
+}
+
+/* کارت محصول – حالت عادی */
+
+
+/* وقتی مخفی میشه */
+
+.hide-obj{
+  display: none;
+}
+
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+  .filter-tab { padding: 10px 24px; font-size: 15px; }
+}
+@media (max-width: 576px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
+
+
 
 /* Responsive Navigation */
 @media (max-width: 992px) {
