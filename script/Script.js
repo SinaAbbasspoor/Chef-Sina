@@ -28,7 +28,7 @@ function showSlides(n) {
     dots[i].classList.remove("active");
   }
 
-  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].style.display = "block"; 
   setTimeout(() => {
     slides[slideIndex - 1].classList.add("active");
   }, 10);
@@ -224,60 +224,31 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// Mobile Menu Logic
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-function openMobileMenu() {
-  if (mobileMenu && mobileMenuOverlay && mobileMenuToggle) {
-    mobileMenu.classList.add('active');
-    mobileMenuOverlay.classList.add('active');
-    mobileMenuToggle.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-  }
-}
+// Menu Category Filter 
 
-function closeMobileMenu() {
-  if (mobileMenu && mobileMenuOverlay && mobileMenuToggle) {
-    mobileMenu.classList.remove('active');
-    mobileMenuOverlay.classList.remove('active');
-    mobileMenuToggle.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scrolling
-  }
-}
+const buttons =document.querySelectorAll(".filter-tab");
 
-if (mobileMenuToggle) {
-  mobileMenuToggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    if (mobileMenu && mobileMenu.classList.contains('active')) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
+const product =document.querySelectorAll(".product-card");
+
+buttons.forEach (btn=>{
+  
+  btn.addEventListener("click",()=>{
+    const filter = this.getAttribute('data-filter');
+  
+    product.forEach(pd=>{
+      const category=pd.getAttribute('data-category');
+
+
+      if (filter === 'all' || filter === category) {
+          product.classList.remove('hide-obj');
+      }
+      else{
+        product.classList.add('hide-obj');
+      }
+    })
   });
-}
 
-if (mobileMenuClose) {
-  mobileMenuClose.addEventListener('click', closeMobileMenu);
-}
 
-if (mobileMenuOverlay) {
-  mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-}
-
-// Close menu on Escape key
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
-    closeMobileMenu();
-  }
 });
-
-// Prevent menu from closing when clicking inside it
-if (mobileMenu) {
-  mobileMenu.addEventListener('click', function (event) {
-    event.stopPropagation();
-  });
-}
 
