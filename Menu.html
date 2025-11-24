@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+    <!-- navbar section -->
+    <nav class="navbar">
+        <div class="nav-content">
+          <a href="#" class="logo"><i class="bx bxs-bowl-hot bx-tada"></i>Chef-Sina</a>
+    
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+    
+          <ul class="nav-links">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Pantry</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+    
+          <div class="nav-utilities">
+            <input type="checkbox" id="search-toggle" hidden />
+    
+            <div class="search-box">
+              <input type="text" placeholder="Search" />
+            </div>
+    
+            <label for="search-toggle" class="search-btn">
+              <i class="bx bx-search"></i>
+            </label>
+    
+            <button class="sign-in-btn">Sign In</button>
+            <button class="sign-up-btn">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+          <h3>Menu</h3>
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-links">
+          <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Menu</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Pantry</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">About</a></li>
+          <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+          <button class="mobile-sign-in-btn" onclick="closeMobileMenu()">Sign In</button>
+          <button class="mobile-sign-up-btn" onclick="closeMobileMenu()">Sign Up</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Main siction -->
+    <main class="products-page-section">
+      <h1 id="menu-title">Menu</h1>
+    
+      <!-- Category Tabs (Sticky) -->
+      <div class="menu-filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="Cold-drinks">Cold Drinks</button>
+        <button class="filter-tab" data-filter="Hot-drinks">Hot Drinks</button>
+        <button class="filter-tab" >ice carems</button>
+        <button class="filter-tab" >smooties</button> 
+      </div>
+    
+      <!-- Products Grid -->
+      <div class="products-grid menu-grid">
+
+        <div class="product-card" data-category="Cold-drinks" >
+          <div class="product-image">
+            <img src="pictrue/Caramel Milkshake.jpg" alt="Caramel Milkshake">
+          </div>
+          <div class="product-info" >
+            <h3 class="product-name">Caramel Milkshake</h3>
+            <p class="product-description"></p>
+            <div class="product-price">
+              <span class="new-price">325,000 T</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="product-card" data-category="Hot-drinks">
+          <div class="product-image">
+            <img src="pictrue/americano.jpg" alt="Espresso">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Espresso Single</h3>
+            <p class="product-description"></p>
+            <div class="product-price">
+              <span class="new-price">98,000 T</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="product-card "data-category="Cold-drinks" >
+          <div class="product-image">
+            <img src="pictrue/icecream.jpg" alt="Iced Espresso">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">ice carem</h3>
+            <p class="product-description"></p>
+            <div class="product-price">
+              <span class="new-price">185,000 T</span>
+            </div>
+          </div>
+        </div>
+    
+        
+      </div>
+    </main>
+    
+    <script src="script/Script.js"></script>
+</body>
+</html>
